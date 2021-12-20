@@ -1,1 +1,2 @@
-console.log('Does my compiler work?');
+// Compile SCSS
+import '../scss/app.scss';

@@ -1,0 +1,47 @@
+//-------------------------------------------------
+// Standard measurements for padding, margins, etc
+//
+// based on $font-size-base of 16px (which of course can be used too)
+// and multiples of the golden ratio 1:1.618
+//-------------------------------------------------
+
+$golden-ratio:   1.618;
+
+$font-size-base: 1rem;
+
+$unit-xs-1:      0.09rem;   // ~1px ($unit-xs-2 / $golden-ratio)
+$unit-xs-2:      0.146rem;  // ~2px ($unit-sm-1 / $golden-ratio)
+
+$unit-sm-1:      0.236rem;  // ~4px ($unit-sm-2 / $golden-ratio)
+$unit-sm-2:      0.382rem;  // ~6px ($unit-sm-3 / $golden-ratio)
+$unit-sm-3:      0.618rem;  // ~9px ($unit-base / $golden-ratio)
+
+$unit-base:      1rem;      // 15px
+
+$unit-md-1:      1.618rem;  // ~24px ($unit-base * $golden-ratio)
+$unit-md-2:      2.618rem;  // ~39px ($unit-md-1 * $golden-ratio)
+$unit-md-3:      4.236rem;  // ~63px ($unit-md-2 * $golden-ratio)
+
+$unit-lg-1:      6.854rem;  // ~102px ($unit-md-3 * $golden-ratio)
+$unit-lg-2:      11.089rem; // ~166px ($unit-lg-1 * $golden-ratio)
+$unit-lg-3:      17.942rem; // ~269px ($unit-lg-2 * $golden-ratio)
+
+//-------------------------------------------------
+// Fonts
+//-------------------------------------------------
+
+$font-family-roboto: "Roboto", Helvetica, Arial, sans-serif;
+$font-family-button: "Work Sans", sans-serif;
+
+//-------------
+// Colours
+//-------------
+
+$color-paper:          #FBFBF9;
+$color-text:           #282828;
+$color-bg-main:        #FFE69F;
+$color-bg-light:       #FCF8DD;
+
+$color-btn-shadow:     #E1E1DF;
+$color-btn-shadow-alt: #D8E1FF;
+ 

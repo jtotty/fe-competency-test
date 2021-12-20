@@ -1,6 +1,6 @@
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCSSExtractPlugin = require('mini-css-extract-plugin');
-const path = require('path');
 
 module.exports = {
     entry: path.resolve(__dirname, '../src/js/app.js'),
@@ -37,6 +37,14 @@ module.exports = {
                 [
                     MiniCSSExtractPlugin.loader,
                     'css-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            postcssOptions: {
+                                plugins: ['autoprefixer'],
+                            },
+                        },
+                    },
                     'sass-loader',
                 ],
             },
