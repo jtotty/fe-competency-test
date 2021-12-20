@@ -4,7 +4,8 @@
 	"description": "UNRVLD front-end competency test",
 	"main": "app.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1"
+		"dev": "webpack serve --config ./bundler/webpack.dev.js",
+		"build": "webpack --config ./bundler/webpack.prod.js"
 	},
 	"repository": {
 		"type": "git",
@@ -15,5 +16,26 @@
 	"bugs": {
 		"url": "https://github.com/jtotty/fe-competency-test/issues"
 	},
-	"homepage": "https://github.com/jtotty/fe-competency-test#readme"
+	"homepage": "https://github.com/jtotty/fe-competency-test#readme",
+	"devDependencies": {
+		"@babel/core": "^7.16.5",
+		"@babel/preset-env": "^7.16.5",
+		"babel-loader": "^8.2.3",
+		"clean-webpack-plugin": "^4.0.0",
+		"css-loader": "^6.5.1",
+		"eslint": "^8.5.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-plugin-import": "^2.25.3",
+		"html-loader": "^3.0.1",
+		"html-webpack-plugin": "^5.5.0",
+		"internal-ip": "^6.2.0",
+		"mini-css-extract-plugin": "^2.4.5",
+		"portfinder-sync": "0.0.2",
+		"sass": "^1.45.0",
+		"sass-loader": "^12.4.0",
+		"webpack": "^5.65.0",
+		"webpack-cli": "^4.9.1",
+		"webpack-dev-server": "^3.11.2",
+		"webpack-merge": "^5.8.0"
+	}
 }
