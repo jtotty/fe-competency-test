@@ -1,13 +1,15 @@
+import BaseModule from './BaseModule';
+
 /**
  * Accordion module.
  * 
  * @params {Object} options - Options object.
  */
-export default class Accordion {
-	constructor({ el, data, maxItems }) {
-		this.el = el;
-		this.data = data;
-		this.maxItems = maxItems
+export default class Accordion extends BaseModule {
+	constructor(data) {
+		super(data);
+
+		// Start
 		this.init();
 	}
 

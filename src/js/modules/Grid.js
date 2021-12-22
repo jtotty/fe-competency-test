@@ -1,3 +1,4 @@
+import BaseModule from './BaseModule';
 import { createDateObj, humanReadable } from "../utils";
 
 /**
@@ -5,11 +6,9 @@ import { createDateObj, humanReadable } from "../utils";
  * 
  * @params {Object} options - Options object.
  */
- export default class Grid {
-	constructor({ el, data, maxItems }) {
-		this.el = el;
-		this.data = data;
-		this.maxItems = maxItems;
+ export default class Grid extends BaseModule {
+	constructor(data) {
+		super(data);
 		this.sortDirection = 'asc'; // Default sorting direction
 
 		// Start

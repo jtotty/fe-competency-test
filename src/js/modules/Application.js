@@ -14,7 +14,6 @@ export default class Application {
 	 */
 	async init() {
 		this.beerData = await fetchData(this.endpoint);
-		console.log(this.beerData);
 
 		this.accordion = new Accordion({
 			el: document.querySelector('#accordion'),

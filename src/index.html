@@ -4,40 +4,53 @@
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>BEER!</title>
+	<title>BEER</title>
 </head>
 <body>
-	<header>
-		<h1>BEER!</h1>
-	</header>
-
-	<main>
-		<h2>Beer Definition</h2>
-
-		<section>
-			<div id="accordion">
-				<div class="accordion-util">
-					<button class="btn-minimal" data-action="open">Open All</button>
-					<button class="btn-minimal" data-action="close">Close All</button>
-				</div>
+	<div class="container">
+		<header class="main-heading">
+			<h1>Beer</h1>
+			<div class="title">
+				<img class="title--letters" src="./svgs/B.svg">
+				<img class="title--letters" src="./svgs/E.svg">
+				<img class="title--letters" src="./svgs/E.svg">
+				<img class="title--letters" src="./svgs/R.svg">
 			</div>
-		</section>
 
-		<section>
-			<div id="grid">
-				<div class="grid-util">
-					<span>Sort By</span>
-					<select id="sort-by">
-						<option value="asc">ASC</option>
-						<option value="desc">DSC</option>
-					</select>
-					<button class="btn btn-sort" data-sort="name">Name</button>
-					<button class="btn btn-sort" data-sort="abv">Abv</button>
-					<button class="btn btn-sort" data-sort="firstbrewed">First Brewed</button>
-				</div>
-				<div id="grid-container"></div>
+			<div class="definition">
+				<h2>[b&#618;&#601;] &centerdot; noun</h2>
+				<hr>
+				<p>An alcoholic drink made from yeast-fermented malt flavoured with hops.</p>
+				<p>"Beer makes everything better."</p>
 			</div>
-		</section>
-	</main>
+		</header>
+	
+		<main>
+			<section>
+				<div id="accordion">
+					<div class="accordion-util">
+						<button class="btn-minimal" data-action="open">Open All</button>
+						<button class="btn-minimal" data-action="close">Close All</button>
+					</div>
+				</div>
+			</section>
+	
+			<section>
+				<div id="grid">
+					<div class="grid-util">
+						<span>Sort By</span>
+						<select id="sort-by">
+							<option value="asc">ASC</option>
+							<option value="desc">DSC</option>
+						</select>
+						<button class="btn btn-sort" data-sort="name">Name</button>
+						<button class="btn btn-sort" data-sort="abv">Abv</button>
+						<button class="btn btn-sort" data-sort="firstbrewed">First Brewed</button>
+					</div>
+					<div id="grid-container"></div>
+				</div>
+			</section>
+		</main>
+	</div>
 </body>
 </html>
