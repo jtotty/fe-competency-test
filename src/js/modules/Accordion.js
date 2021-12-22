@@ -2,7 +2,6 @@ export default class Accordion {
 	constructor({ el, data }) {
 		this.el = el;
 		this.data = data;
-
 		this.init();
 	}
 
@@ -16,7 +15,9 @@ export default class Accordion {
 			this.el.innerHTML += markup;
 		}
 
+		this.accordions = document.querySelectorAll('.accordion-item');
 		this.addEventListeners();
+		this.initOpenCloseAll();
 	}
 
 	/**
@@ -30,8 +31,8 @@ export default class Accordion {
 		const { name, tagline, first_brewed, description, food_pairing } = data;
 	
 		return `
-			<div class="accordion-item">
-				<div id="accordion-${index}" class="accordion-heading">
+			<div id="accordion-${index}"  class="accordion-item">
+				<div class="accordion-heading">
 					<h3>${name}</h3>
 					<button class="btn">Open</button>
 				</div>
@@ -53,15 +54,33 @@ export default class Accordion {
 	 * Add our event listeners to the accordion items.
 	 */
 	addEventListeners() {
-		const accordions = document.querySelectorAll('.accordion-item');
-
-		// Add event listener to each accordion.
-		accordions.forEach(accordion => {
+		this.accordions.forEach(accordion => {
 			const button = accordion.querySelector('.btn');
 			const content = accordion.querySelector('.accordion-content');
 
 			button.addEventListener('click', () => {
 				content.classList.toggle('active');
+			});
+		});
+	}
+
+	/**
+	 * Open all accordions.
+	 */
+	initOpenCloseAll() {
+		['open-all', 'close-all'].forEach(id => {
+			const btn = this.el.querySelector(`#${id}`);
+
+			btn.addEventListener('click', () => {
+				this.accordions.forEach(accordion => {
+					const content = accordion.querySelector('.accordion-content');
+
+					if (id === 'open-all') {
+						content.classList.add('active');
+					} else if (id === 'close-all') {
+						content.classList.remove('active');
+					}
+				});
 			});
 		});
 	}
