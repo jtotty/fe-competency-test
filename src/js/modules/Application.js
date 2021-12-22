@@ -19,6 +19,7 @@ export default class Application {
 		this.accordion = new Accordion({
 			el: document.querySelector('#accordion'),
 			data: this.beerData,
+			maxItems: 5,
 		});
 	}
 }

@@ -1,7 +1,13 @@
+/**
+ * Accordion module.
+ * 
+ * @params {Object} options - Options object.
+ */
 export default class Accordion {
-	constructor({ el, data }) {
+	constructor({ el, data, maxItems }) {
 		this.el = el;
 		this.data = data;
+		this.maxItems = maxItems
 		this.init();
 	}
 
@@ -10,7 +16,7 @@ export default class Accordion {
 	 */
 	init() {
 		// Loop through first 5 items in data.
-		for (let i = 0; i < 5; i++) {
+		for (let i = 0; i < this.maxItems; i++) {
 			const markup = this.generateMarkup(i, this.data[i]);
 			this.el.innerHTML += markup;
 		}
@@ -60,6 +66,9 @@ export default class Accordion {
 
 			button.addEventListener('click', () => {
 				content.classList.toggle('active');
+
+				// Update button text
+				content.classList.contains('active') ? button.innerHTML = 'Close' : button.innerHTML = 'Open';
 			});
 		});
 	}
@@ -80,6 +89,10 @@ export default class Accordion {
 					} else if (id === 'close-all') {
 						content.classList.remove('active');
 					}
+
+					// Update individual accordion button text
+					const accordionBtn = accordion.querySelector('.btn');
+					content.classList.contains('active') ? accordionBtn.innerHTML = 'Close' : accordionBtn.innerHTML = 'Open';
 				});
 			});
 		});
