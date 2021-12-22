@@ -34,7 +34,7 @@ export default class Accordion {
 	 * @returns {string}
 	 */
 	generateMarkup(index, data) {
-		const { name, tagline, first_brewed, description, food_pairing } = data;
+		const { name, tagline, abv, first_brewed, description, food_pairing } = data;
 	
 		return `
 			<div id="accordion-${index}"  class="accordion-item">
@@ -50,7 +50,8 @@ export default class Accordion {
 					<p>Food Pairing</p>
 					<ul>
 						${food_pairing.map(item => `<li>${item}</li>`).join('')}
-					</ul>					
+					</ul>
+					<p>${abv}% (abv)</p>			
 				</div>
 			</div>
 		`;

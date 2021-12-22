@@ -1,6 +1,6 @@
 import { fetchData } from '../utils';
 import Accordion from './Accordion';
-// import Grid from './Grid';
+import Grid from './Grid';
 
 export default class Application {
 	constructor({ endpoint }) {
@@ -20,6 +20,12 @@ export default class Application {
 			el: document.querySelector('#accordion'),
 			data: this.beerData,
 			maxItems: 5,
+		});
+
+		this.grid = new Grid({
+			el: document.querySelector('#grid'),
+			data: this.beerData,
+			maxItems: 8,
 		});
 	}
 }
