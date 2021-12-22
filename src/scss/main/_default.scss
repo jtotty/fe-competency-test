@@ -2,4 +2,10 @@ body {
 	font-family: $font-family-button;
 	background-color: $color-paper;
 	padding: $unit-base;
+	color: $color-text;
+}
+
+main {
+	background-color: $color-bg-main;
+	padding: $unit-base;
 }

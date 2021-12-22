@@ -1,4 +1,4 @@
-import fetchData from '../functions/fetchData';
+import { fetchData } from '../utils';
 import Accordion from './Accordion';
 // import Grid from './Grid';
 
@@ -15,13 +15,10 @@ export default class Application {
 	async init() {
 		this.beerData = await fetchData(this.endpoint);
 		console.log(this.beerData);
-		this.renderAccordion();
-	}
 
-	/**
-	 * Render our Accordion.
-	 */
-	renderAccordion() {
-		this.accordion = new Accordion();
+		this.accordion = new Accordion({
+			el: document.querySelector('#accordion'),
+			data: this.beerData,
+		});
 	}
 }

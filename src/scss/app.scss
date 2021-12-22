@@ -1,3 +1,7 @@
-@import "masters/fonts";
-@import "masters/variables";
-@import "masters/default";
+// Main
+@import "main/fonts";
+@import "main/variables";
+@import "main/default";
+
+// Modules
+@import "modules/accordion";
