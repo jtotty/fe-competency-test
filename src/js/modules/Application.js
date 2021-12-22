@@ -23,7 +23,7 @@ export default class Application {
 		});
 
 		this.grid = new Grid({
-			el: document.querySelector('.grid-container'),
+			el: document.querySelector('#grid-container'),
 			data: this.beerData,
 			maxItems: 8,
 		});

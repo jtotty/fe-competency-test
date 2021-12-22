@@ -25,3 +25,27 @@ export function handleErrors(response) {
 
 	return data;
 }
+
+/**
+ * Create Date object.
+ *
+ * @param {string} dateString - The date string to convert.
+ * @returns {Date}
+ */
+export function createDateObj(dateString) {
+	const { 0: month, 1: year } = dateString.split('/');
+	return new Date(year, month - 1);
+}
+
+/**
+ * Create human readable date.
+ * 
+ * @param {Date} dateObj - The date object to format.
+ * @returns {string}
+ */
+export function humanReadable(dateObj) {
+	return dateObj.toLocaleDateString('en-GB', {
+		month: 'long',
+		year: 'numeric'
+	});
+}

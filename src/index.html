@@ -17,8 +17,8 @@
 		<section>
 			<div id="accordion">
 				<div class="accordion-util">
-					<button id="open-all" class="btn-minimal">Open All</button>
-					<button id="close-all" class="btn-minimal">Close All</button>
+					<button class="btn-minimal" data-action="open">Open All</button>
+					<button class="btn-minimal" data-action="close">Close All</button>
 				</div>
 			</div>
 		</section>
@@ -27,10 +27,15 @@
 			<div id="grid">
 				<div class="grid-util">
 					<span>Sort By</span>
-					<button id="sort-name" class="btn">Name</button>
-					<button id="sort-abv" class="btn">Abv</button>
+					<select id="sort-by">
+						<option value="asc">ASC</option>
+						<option value="desc">DSC</option>
+					</select>
+					<button class="btn btn-sort" data-sort="name">Name</button>
+					<button class="btn btn-sort" data-sort="abv">Abv</button>
+					<button class="btn btn-sort" data-sort="firstbrewed">First Brewed</button>
 				</div>
-				<div class="grid-container"></div>
+				<div id="grid-container"></div>
 			</div>
 		</section>
 	</main>

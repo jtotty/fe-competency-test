@@ -69,31 +69,38 @@ export default class Accordion {
 				content.classList.toggle('active');
 
 				// Update button text
-				content.classList.contains('active') ? button.innerHTML = 'Close' : button.innerHTML = 'Open';
+				content.classList.contains('active') 
+					? button.innerHTML = 'Close'
+					: button.innerHTML = 'Open';
 			});
 		});
 	}
 
 	/**
-	 * Open all accordions.
+	 * Add event listener to open/close all button.
+	 * Update accordion active state.
+	 * Update button texts.
 	 */
 	initOpenCloseAll() {
-		['open-all', 'close-all'].forEach(id => {
-			const btn = this.el.querySelector(`#${id}`);
-
+		const actionBtnEls = document.querySelectorAll('.btn-minimal');
+		
+		actionBtnEls.forEach(btn => {
 			btn.addEventListener('click', () => {
 				this.accordions.forEach(accordion => {
 					const content = accordion.querySelector('.accordion-content');
-
-					if (id === 'open-all') {
+					
+					// Expand/collapse accordion items
+					if (btn.dataset.action === 'open') {
 						content.classList.add('active');
-					} else if (id === 'close-all') {
+					} else if (btn.dataset.action === 'close') {
 						content.classList.remove('active');
 					}
 
 					// Update individual accordion button text
 					const accordionBtn = accordion.querySelector('.btn');
-					content.classList.contains('active') ? accordionBtn.innerHTML = 'Close' : accordionBtn.innerHTML = 'Open';
+					content.classList.contains('active') 
+						? accordionBtn.innerHTML = 'Close'
+						: accordionBtn.innerHTML = 'Open';
 				});
 			});
 		});
