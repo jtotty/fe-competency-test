@@ -1,0 +1,17 @@
+.btn {
+	border: $unit-xs-2 solid $color-text;
+	border-radius: $unit-sm-1;
+	color: $color-text;
+	background-color: $color-paper;
+	text-transform: uppercase;
+	min-width: $unit-lg-2;
+	padding: $unit-sm-3 0;
+	font-family: $font-family-button;
+	font-weight: 700;
+	font-size: $unit-base;
+	box-shadow: inset 0 -8px 0 0 $color-btn-shadow;
+
+	&:hover {
+		cursor: pointer;
+	}
+}

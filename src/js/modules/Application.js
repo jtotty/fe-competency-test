@@ -16,7 +16,7 @@ export default class Application {
 		this.beerData = await fetchData(this.endpoint);
 
 		this.accordion = new Accordion({
-			el: document.querySelector('#accordion'),
+			el: document.querySelector('#accordion-container'),
 			data: this.beerData,
 			maxItems: 5,
 		});

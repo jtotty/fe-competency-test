@@ -1,12 +1,22 @@
-body {
-	font-family: $font-family-button;
-	background-color: $color-paper;
-	padding: $unit-base;
-	color: $color-text;
+@use "sass:map";
+
+*, ::after, ::before {
+	box-sizing: border-box;
 }
 
-main {
-	padding: $unit-base;
+html {
+	background-color: $color-paper;
+	padding: 0 $unit-md-1 $unit-md-1 $unit-md-1;
+}
+
+body {
+	font-family: $font-family-roboto;
+	color: $color-text;
+	background-color: $color-bg-main;
+	margin: 0;
+	height: 100%;
+	margin-top: 330px;
+	margin-bottom: -400px;
 	border-radius: $unit-sm-1;
 }
 
@@ -14,7 +24,32 @@ section {
 	margin-bottom: $unit-lg-1;
 }
 
+h1 {
+	font-size: $h1-font-size;
+}
+
+h2 {
+	font-size: $h2-font-size;
+}
+
+h3 {
+	font-size: $h3-font-size;
+}
+
+h4 {
+	font-size: $h4-font-size;
+}
+
+h5 {
+	font-size: $h5-font-size;
+}
+
+h6 {
+	font-size: $h6-font-size;
+}
+
 .container {
-	margin-top: 200px;
-	background-color: $color-bg-main;
+	margin: 0 auto;
+	padding: 0 $unit-base $unit-base $unit-base;
+	max-width: map.get($breakpoints, xl);
 }

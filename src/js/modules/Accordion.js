@@ -1,4 +1,5 @@
 import BaseModule from './BaseModule';
+import { createDateObj, humanReadable } from "../utils";
 
 /**
  * Accordion module.
@@ -46,14 +47,14 @@ export default class Accordion extends BaseModule {
 				</div>
 
 				<div class="accordion-content">
-					<p>${tagline}</p>
-					<date>${first_brewed}</date>
-					<p>${description}</p>
-					<p>Food Pairing</p>
+					<h4>${tagline}</h4>
+					<p>First Brewed <date>${humanReadable(createDateObj(first_brewed))}</date></p>
+					<p class="description">${description}</p>
+					<h5>Food Pairing</h5>
 					<ul>
 						${food_pairing.map(item => `<li>${item}</li>`).join('')}
 					</ul>
-					<p>${abv}% (abv)</p>			
+					<div class="abv">${abv}% (abv)</div>			
 				</div>
 			</div>
 		`;
@@ -84,7 +85,7 @@ export default class Accordion extends BaseModule {
 	 * Update button texts.
 	 */
 	initOpenCloseAll() {
-		const actionBtnEls = document.querySelectorAll('.btn-minimal');
+		const actionBtnEls = document.querySelectorAll('.btn-accordion-util');
 		
 		actionBtnEls.forEach(btn => {
 			btn.addEventListener('click', () => {

@@ -1,25 +1,101 @@
 #accordion {
 	width: 100%;
 
+	.accordion-util {
+		display: flex;
+		justify-content: end;
+		margin-bottom: $unit-md-1;
+
+		.btn:first-child {
+			margin-right: $unit-base;
+		}
+	}
+
 	.accordion-item {
-		border: 2px solid $color-text;
+		border: $unit-xs-2 solid $color-text;
+		background-color: $color-paper;
+
+		&:first-child {
+			border-top-left-radius: $unit-base;
+			border-top-right-radius: $unit-base;
+		}
+
+		&:last-child {
+			border-bottom-left-radius: $unit-base;
+			border-bottom-right-radius: $unit-base;
+		}
+
+		&:not(:first-of-type) {
+			border-top: 0;
+		}
 
 		.accordion-heading {
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
-			border-bottom: 2px solid $color-text;
-			padding: $unit-base;
+			padding: $unit-md-1 $unit-md-2 $unit-md-1 $unit-md-2;
+
+			h3 {
+				margin: 0;
+				text-decoration: underline;
+				text-decoration-color: $color-purple;
+				text-decoration-thickness: 15%;
+				text-decoration-skip-ink: auto;
+			}
 		}
 
 		.accordion-content {
 			max-height: 0;
 			overflow: hidden;
 			padding: 0;
+			background-color: $color-bg-light;
+			
+			&:last-child {
+				border-bottom-left-radius: $unit-base;
+				border-bottom-right-radius: $unit-base;
+			}
 
 			&.active {
 				max-height: 500px;
-				padding: $unit-base;
+				padding: $unit-md-1 $unit-md-2 $unit-md-1 $unit-md-2;
+				border-top: $unit-xs-2 solid $color-text;
+			}
+
+			h4 {
+				margin: 0;
+				margin-bottom: $unit-md-1;
+			}
+
+			h5 {
+				margin-bottom: $unit-sm-3;
+			}
+
+			p {
+				margin-top: 0;
+				margin-bottom: $unit-base;
+			}
+
+			date {
+				font-style: italic;
+			}
+
+			ul {
+				list-style-type: none;
+				margin-top: 0;
+				padding: 0;
+
+				li {
+					margin-bottom: $unit-sm-1;
+				}
+			}
+
+			.description {
+				margin-bottom: $unit-md-1;
+			}
+
+			.abv {
+				float: right;
+				font-weight: 500;
 			}
 		}
 	}
