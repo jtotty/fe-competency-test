@@ -133,5 +133,44 @@
 				font-weight: 700;
 			}
 		}
+
+		// When a grid item is being added
+		&.appear {
+			animation: appear .5s ease-in-out;
+			animation-fill-mode: forwards;
+
+			@keyframes appear {
+				0% {
+					opacity: 0;
+				}
+
+				100% {
+					opacity: 1;
+				}
+			}
+		}
+
+		// When a grid item is being removed
+		&.vanish {
+			animation: vanish .5s ease-in-out;
+			animation-fill-mode: forwards;
+
+			// Delay animation for each grid item
+			@for $i from 1 through 8 {
+				&:nth-child(#{$i}) {
+					animation-delay: $i * .1s;
+				}
+			}
+
+			@keyframes vanish {
+				0% {
+					transform: translateX(0%);
+				}
+
+				100% {
+					transform: translateX(500%);
+				}
+			}
+		}
 	}
 }

@@ -39,7 +39,7 @@ import { createDateObj, humanReadable } from "../utils";
 		const { name, tagline, description, first_brewed, abv } = data;
 	
 		return `
-			<div id="grid-${index}" class="grid-item">
+			<div id="grid-${index}" class="grid-item appear">
 				<div class="grid-heading">
 					<h3>${name}</h3>
 				</div>
@@ -103,16 +103,28 @@ import { createDateObj, humanReadable } from "../utils";
 			});
 		}
 
-		// Only show the first 'x' items in the grid.
+		// Only show the first 'x' items in the grid
 		const sliced = beers.slice(0, this.maxItems);
 
-		// Clear the grid
-		this.el.innerHTML = '';
+		// Add class to all grid items
+		const gridItems = document.querySelectorAll('.grid-item');
+		gridItems.forEach(item => {
+			item.classList.add('vanish');
+		});
 
-		// Add sorted grid items
-		for (let i = 0; i < sliced.length; i++) {
-			const markup = this.generateMarkup(i, sliced[i]);
-			this.el.innerHTML += markup;
-		}
+		const vanishTiming = 500;
+		const staggeredDelay = 800;
+
+		// Wait for all grid items to vanish
+		setTimeout(() => {
+			// Clear the grid
+			this.el.innerHTML = '';
+
+			// Add sorted grid items
+			for (let i = 0; i < sliced.length; i++) {
+				const markup = this.generateMarkup(i, sliced[i]);
+				this.el.innerHTML += markup;
+			}
+		}, vanishTiming + staggeredDelay);
 	}
 }

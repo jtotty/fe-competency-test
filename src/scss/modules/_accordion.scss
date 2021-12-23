@@ -79,23 +79,19 @@
 		.accordion-content {
 			max-height: 0;
 			overflow: hidden;
-			padding: 0;
+			padding: 0 $unit-md-2;
 			background-color: $color-bg-light;
+			transition: max-height 0.5s ease-in-out, border-top 0s linear .4s;
+			border-top: $unit-xs-2 solid $color-paper;
+
 			
 			&:last-child {
 				border-bottom-left-radius: $unit-base;
 				border-bottom-right-radius: $unit-base;
 			}
 
-			&.active {
-				max-height: 500px;
-				padding: $unit-md-1 $unit-md-2 $unit-md-1 $unit-md-2;
-				border-top: $unit-xs-2 solid $color-text;
-			}
-
 			h4 {
-				margin: 0;
-				margin-bottom: $unit-md-1;
+				margin-bottom: $unit-md-1 0;
 			}
 
 			h5 {
@@ -128,6 +124,15 @@
 			.abv {
 				float: right;
 				font-weight: 500;
+				margin-bottom: $unit-md-1;
+			}
+		}
+
+		&.active {
+			.accordion-content {
+				max-height: 500px;
+				border-top: $unit-xs-2 solid $color-text;
+				transition:  max-height 0.5s ease-in-out, border-top 0s linear;
 			}
 		}
 	}

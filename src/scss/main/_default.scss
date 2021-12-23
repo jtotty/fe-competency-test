@@ -7,6 +7,7 @@
 html {
 	background-color: $color-paper;
 	padding: 0 $unit-md-1 $unit-md-1 $unit-md-1;
+	overflow-x: hidden;
 }
 
 body {

@@ -66,13 +66,12 @@ export default class Accordion extends BaseModule {
 	addEventListeners() {
 		this.accordions.forEach(accordion => {
 			const button = accordion.querySelector('.btn');
-			const content = accordion.querySelector('.accordion-content');
 
 			button.addEventListener('click', () => {
-				content.classList.toggle('active');
+				accordion.classList.toggle('active');
 
 				// Update button text
-				content.classList.contains('active') 
+				accordion.classList.contains('active') 
 					? button.innerHTML = 'Close'
 					: button.innerHTML = 'Open';
 			});
@@ -90,18 +89,16 @@ export default class Accordion extends BaseModule {
 		actionBtnEls.forEach(btn => {
 			btn.addEventListener('click', () => {
 				this.accordions.forEach(accordion => {
-					const content = accordion.querySelector('.accordion-content');
-					
 					// Expand/collapse accordion items
 					if (btn.dataset.action === 'open') {
-						content.classList.add('active');
+						accordion.classList.add('active');
 					} else if (btn.dataset.action === 'close') {
-						content.classList.remove('active');
+						accordion.classList.remove('active');
 					}
 
 					// Update individual accordion button text
 					const accordionBtn = accordion.querySelector('.btn');
-					content.classList.contains('active') 
+					accordion.classList.contains('active') 
 						? accordionBtn.innerHTML = 'Close'
 						: accordionBtn.innerHTML = 'Open';
 				});
