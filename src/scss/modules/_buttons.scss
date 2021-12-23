@@ -4,8 +4,8 @@
 	color: $color-text;
 	background-color: $color-paper;
 	text-transform: uppercase;
-	min-width: $unit-lg-2;
-	height: $unit-md-2;
+	min-width: $unit-lg-2 * .8;
+	height: $unit-md-2 * .8;
 	padding-bottom: $unit-sm-2;
 	font-family: $font-family-button;
 	font-weight: 700;
@@ -14,5 +14,10 @@
 
 	&:hover {
 		cursor: pointer;
+	}
+
+	@media screen and (min-width: $breakpoint-md) {
+		min-width: $unit-lg-2;
+		height: $unit-md-2;
 	}
 }

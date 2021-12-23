@@ -20,6 +20,7 @@
 		}
 
 		hr {
+			display: none;
 			width: 100%;
 			height: $unit-xs-1;
 			background-color: $color-text;
@@ -27,6 +28,12 @@
     		border-radius: $unit-sm-2;
 			margin: $unit-md-1 0;
 			margin-right: $unit-md-1;
+		}
+
+		@media screen and (min-width: $breakpoint-md) {
+			hr {
+				display: inherit;
+			}
 		}
 	}
 
@@ -60,6 +67,12 @@
 				text-decoration-color: $color-purple;
 				text-decoration-thickness: 15%;
 				text-decoration-skip-ink: auto;
+				font-size: $h4-font-size;
+				margin-right: $unit-base;
+
+				@media screen and (min-width: $breakpoint-md) {
+					font-size: $h3-font-size;					
+				}
 			}
 		}
 
