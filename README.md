@@ -1,5 +1,9 @@
 # Beer Makes Everything Better
 
+Live site: https://laughing-stonebraker-99b126.netlify.app/
+
+Author: James Totty
+
 ## Setup
 
 ``` bash
