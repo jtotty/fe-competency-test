@@ -48,6 +48,10 @@ h6 {
 	font-size: $h6-font-size;
 }
 
+p {
+	line-height: 1.5;
+}
+
 .container {
 	margin: 0 auto;
 	padding: 0 $unit-base $unit-base $unit-base;

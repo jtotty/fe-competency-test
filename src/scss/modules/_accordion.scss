@@ -3,11 +3,30 @@
 
 	.accordion-util {
 		display: flex;
+		align-items: center;
 		justify-content: end;
 		margin-bottom: $unit-md-1;
 
-		.btn:first-child {
+		.btn {
 			margin-right: $unit-base;
+
+			&:first-child {
+				margin-right: $unit-base;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		hr {
+			width: 100%;
+			height: $unit-xs-1;
+			background-color: $color-text;
+			border: $unit-xs-1 solid $color-text;
+    		border-radius: $unit-sm-2;
+			margin: $unit-md-1 0;
+			margin-right: $unit-md-1;
 		}
 	}
 

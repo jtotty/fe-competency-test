@@ -36,7 +36,7 @@ import { createDateObj, humanReadable } from "../utils";
 	 * @returns {string}
 	 */
 	generateMarkup(index, data) {
-		const { name, tagline, first_brewed, abv } = data;
+		const { name, tagline, description, first_brewed, abv } = data;
 	
 		return `
 			<div id="grid-${index}" class="grid-item">
@@ -45,9 +45,12 @@ import { createDateObj, humanReadable } from "../utils";
 				</div>
 
 				<div class="grid-content">
-					<p>${tagline}</p>
-					<p>First Brewed: ${humanReadable(createDateObj(first_brewed))}</p>
-					<p>${abv}% (abv)</p>
+					<div>
+						<h4>${tagline}</h4>
+						<p>First Brewed <date>${humanReadable(createDateObj(first_brewed))}</date></p>
+						<p class="description">${description}</p>
+					</div>
+					<div class="abv">${abv}% (abv)</div>
 				</div>
 			</div>
 		`;

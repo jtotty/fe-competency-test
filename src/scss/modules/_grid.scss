@@ -2,24 +2,115 @@
 	width: 100%;
 
 	.grid-util {
+		display: flex;
+		align-items: center;
 		margin-bottom: $unit-md-1;
+
+		.grid-util--select {
+			display: flex;
+			align-items: center;
+			margin-right: $unit-base;
+
+			span {
+				font-size: $h4-font-size;
+				font-weight: 500;
+				text-transform: uppercase;
+				margin-right: $unit-sm-3;
+				white-space: nowrap;
+			}
+
+			select {
+				border: $unit-xs-2 solid $color-text;
+				border-radius: $unit-sm-1;
+				padding: $unit-sm-2;
+				color: $color-text;
+				background-color: $color-paper;
+				text-transform: uppercase;
+				font-family: $font-family-button;
+				font-weight: 700;
+				font-size: $unit-base;
+			}
+		}
+
+		.btn {
+			margin-right: $unit-base;
+
+			&:last-of-type {
+				margin-right: $unit-md-1;
+			}
+		}
+
+		hr {
+			width: 100%;
+			height: $unit-xs-1;
+			background-color: $color-text;
+			border: $unit-xs-1 solid $color-text;
+    		border-radius: $unit-sm-2;
+			margin: $unit-md-1 0;
+			align-self: flex-end;
+		}
 	}
 
 	#grid-container {
 		display: grid;
-		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
 		grid-gap: $unit-base;
 		justify-items: center;
 		align-items: center;
 	}
 
 	.grid-item {
+		display: flex;
+		flex-direction: column;
 		width: 100%;
-		border: 2px solid $color-text;
-		min-height: 200px;
+		height: 100%;
+		border: $unit-xs-2 solid $color-text;
+		border-radius: $unit-base;
+		background-color: $color-paper;
+		box-shadow: inset 0 -15px 0 0 $color-blue;
 
 		.grid-heading, .grid-content {
 			padding: $unit-base;
+		}
+
+		.grid-heading {
+			h3 {
+				margin: 0;
+				text-decoration: underline;
+				text-decoration-color: $color-purple;
+				text-decoration-thickness: 15%;
+				text-decoration-skip-ink: auto;
+			}
+		}
+
+		.grid-content {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			height: 100%;
+			padding-bottom: $unit-base * 2;
+
+			h4 {
+				margin: 0;
+				margin-bottom: $unit-base;
+			}
+
+			date {
+				font-style: italic;
+			}
+
+			.description {
+				overflow: hidden;
+				text-overflow: ellipsis;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+
+			.abv {
+				align-self: flex-end;
+				font-weight: 700;
+			}
 		}
 	}
 }
